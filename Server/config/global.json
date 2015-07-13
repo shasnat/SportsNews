@@ -1,0 +1,17 @@
+{
+  "global": {
+    "parseVersion": "1.4.2"
+  },
+  "applications": {
+    "Server": {
+      "link": "Sports News"
+    },
+    "Sports News": {
+      "applicationId": "x4ljpaGI6iZEMHxdvFNQDAyLbnlttjGdeeGCm7CR",
+      "masterKey": "H7dtVo2IQwUVv55S0RT1zXDy0JXTnFQ3iW2DnjWP"
+    },
+    "_default": {
+      "link": "Sports News"
+    }
+  }
+}
