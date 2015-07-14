@@ -6,6 +6,9 @@ public class GUIManager : MonoBehaviour {
 
 	public static GUIManager instance;
 	public const string kBackTransition = "Back";
+	public const string kPrefabsFolder = "Prefabs/";
+	public const string kPopupsFolder = "Popups/";
+	public const string kSchedulePopup = "SchedulePopup";
 	private Stack _stateStack;
 	private GUIState _currentState;
 	private Dictionary<string, Dictionary<string, string>> _transitions;
@@ -22,7 +25,8 @@ public class GUIManager : MonoBehaviour {
 
 	public enum GUIDataType {
 		None,
-		NewsItem
+		NewsItem,
+		ScheduleItem
 	}
 
 	void Start() {
@@ -56,7 +60,7 @@ public class GUIManager : MonoBehaviour {
 	public bool Transition(GUIState state) {
 		bool success = false;
 		if(state != null) {
-			Object screenPrefab = Resources.Load("Prefabs/"+state.screenName);
+			Object screenPrefab = Resources.Load(kPrefabsFolder+state.screenName);
 			if(screenPrefab != null) {
 				DestroyChildren();
 				GameObject screenObject = Instantiate(screenPrefab) as GameObject;
@@ -100,6 +104,20 @@ public class GUIManager : MonoBehaviour {
 			Transition(endState);
 		}
 		return success;
+	}
+
+	public void SpawnPopup(GUIStateData data = null, string prefabName = kSchedulePopup) {
+		Object popupPrefab = Resources.Load(kPrefabsFolder+kPopupsFolder+prefabName);
+		if(popupPrefab != null) {
+			GameObject prefabObject = Instantiate(popupPrefab) as GameObject;
+			if(prefabObject != null) {
+				prefabObject.transform.SetParent(this.transform, false);
+				IScreen screen = prefabObject.GetComponent<IScreen>();
+				if(screen != null) {
+					screen.TransitionUpdate(data);
+				}
+			}
+		}
 	}
 
 	private bool BackTransition() {

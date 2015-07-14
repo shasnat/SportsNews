@@ -22,6 +22,7 @@ public class ScheduleRow : BaseScrollScreen {
 			SetTimeLabel();
 			SetHomeAwayLabel();
 			SetWinLossLabel();
+			SetButton();
 		}
 	}
 
@@ -66,6 +67,24 @@ public class ScheduleRow : BaseScrollScreen {
 				string winLossText = "L";
 				winLossLabel.text = winLossText;
 			}
+		}
+	}
+
+	private void SetButton() {
+		if(button != null) {
+			button.onClick.AddListener(() => {
+				ClickHandler(button.name);
+			});
+		}
+	}
+
+	private void ClickHandler(string name) {
+		GUIManager.instance.SpawnPopup();
+	}
+
+	void OnDestroy() {
+		if(button != null) {
+			button.onClick.RemoveAllListeners();
 		}
 	}
 }

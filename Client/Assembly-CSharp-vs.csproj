@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{F69C1694-B192-4BCE-7BA2-A02C06CCFB92}</ProjectGuid>
+	<ProjectGuid>{12F44184-A422-5F27-22E6-507969043F15}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scripts\Model\Manager\GUIManager.cs" />
      <Compile Include="Assets\Scripts\Model\Manager\HttpRequestManager.cs" />
      <Compile Include="Assets\Scripts\Model\Manager\NewsManager.cs" />
+     <Compile Include="Assets\Scripts\Model\Manager\RequestManager.cs" />
      <Compile Include="Assets\Scripts\Model\Manager\ScheduleManager.cs" />
      <Compile Include="Assets\Scripts\Model\Manager\StartupManager.cs" />
      <Compile Include="Assets\Scripts\Model\Manager\UserManager.cs" />
@@ -63,10 +64,12 @@
      <Compile Include="Assets\Scripts\View\Helper\ScrollRectSnap.cs" />
      <Compile Include="Assets\Scripts\View\Row\NewsRow.cs" />
      <Compile Include="Assets\Scripts\View\Row\ScheduleRow.cs" />
+     <Compile Include="Assets\Scripts\View\Screen\BasePopupScript.cs" />
      <Compile Include="Assets\Scripts\View\Screen\BaseScrollScreen.cs" />
      <Compile Include="Assets\Scripts\View\Screen\IScreen.cs" />
      <Compile Include="Assets\Scripts\View\Screen\MainScreenScript.cs" />
      <Compile Include="Assets\Scripts\View\Screen\NewsScreenScript.cs" />
+     <Compile Include="Assets\Scripts\View\Screen\SchedulePopupScript.cs" />
      <Compile Include="Assets\Scripts\View\Screen\ScheduleScreenScript.cs" />
      <Compile Include="Assets\Scripts\View\Screen\TrendingScreenScript.cs" />
      <Compile Include="Assets\Scripts\View\Screen\WhatsNewScreenScript.cs" />
@@ -77,7 +80,7 @@
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="Parse.Unity">
- <HintPath>/Users/shasnat/Documents/Projects/Steve/SportsNews/SportsNews/Assets/Parse.Unity.dll</HintPath>
+ <HintPath>/Users/shasnat/Documents/Projects/Steve/SportsNews/Client/Assets/Parse.Unity.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
  <HintPath>/Applications/Unity/Unity.app/Contents/PlaybackEngines/iossupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
