@@ -3,8 +3,10 @@ using System.Collections;
 
 public class ScheduleRow : BaseScrollScreen {
 
-	public UnityEngine.UI.Image teamLogo;
-	public UnityEngine.UI.Text opponentLabel;
+	public UnityEngine.UI.Image homeTeamLogo;
+	public UnityEngine.UI.Text homeTeamLabel;
+	public UnityEngine.UI.Image awayTeamLogo;
+	public UnityEngine.UI.Text awayTeamLabel;
 	public UnityEngine.UI.Text dateLabel;
 	public UnityEngine.UI.Text timeLabel;
 	public UnityEngine.UI.Text homeAwayLabel;
@@ -16,8 +18,8 @@ public class ScheduleRow : BaseScrollScreen {
 	public void SetData(ScheduleItem scheduleItem) {
 		if(scheduleItem != null) {
 			_scheduleItem = scheduleItem;
-			SetTeamLogo();
-			SetOpponentLabel();
+			SetTeamLogos();
+			SetTeamNameLabels();
 			SetDateLabel();
 			SetTimeLabel();
 			SetHomeAwayLabel();
@@ -26,17 +28,19 @@ public class ScheduleRow : BaseScrollScreen {
 		}
 	}
 
-	private void SetTeamLogo() {
-		if(teamLogo != null && !string.IsNullOrEmpty(_scheduleItem.HomeTeam) && !string.IsNullOrEmpty(_scheduleItem.AwayTeam)) {
-			string spriteName = _scheduleItem.GetOpponent() + ".png";
-			teamLogo.sprite.name = spriteName;
+	private void SetTeamLogos() {
+		if(!string.IsNullOrEmpty(_scheduleItem.HomeTeam) && !string.IsNullOrEmpty(_scheduleItem.AwayTeam)) {
+			string spriteName = _scheduleItem.HomeTeam + ".png";
+			Util.SetImage(homeTeamLogo, spriteName);
+
+			spriteName = _scheduleItem.AwayTeam + ".png";
+			Util.SetImage(awayTeamLogo, spriteName);
 		}
 	}
 
-	private void SetOpponentLabel() {
-		if(opponentLabel != null) {
-			opponentLabel.text = _scheduleItem.GetOpponent();
-		}
+	private void SetTeamNameLabels() {
+		Util.SetLabel(homeTeamLabel, _scheduleItem.HomeTeam);
+		Util.SetLabel(awayTeamLabel, _scheduleItem.AwayTeam);
 	}
 
 	private void SetDateLabel() {
