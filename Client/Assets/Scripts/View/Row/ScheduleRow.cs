@@ -78,7 +78,10 @@ public class ScheduleRow : BaseScrollScreen {
 	}
 
 	private void ClickHandler(string name) {
-		GUIManager.instance.SpawnPopup();
+		GUIManager.GUIStateData data = new GUIManager.GUIStateData();
+		data.type = GUIManager.GUIDataType.ScheduleItem;
+		data.metadata = _scheduleItem;
+		GUIManager.instance.SpawnPopup(data);
 	}
 
 	void OnDestroy() {

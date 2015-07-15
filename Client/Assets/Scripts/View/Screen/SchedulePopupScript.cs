@@ -8,6 +8,8 @@ public class SchedulePopupScript : MonoBehaviour, IScreen {
 	public UnityEngine.UI.Button bgButton;
 	public UnityEngine.UI.Image homeTeamLogo;
 	public UnityEngine.UI.Image awayTeamLogo;
+	public UnityEngine.UI.Image homeBG;
+	public UnityEngine.UI.Image awayBG;
 	public UnityEngine.UI.Button homeTeamButton;
 	public UnityEngine.UI.Button awayTeamButton;
 	public UnityEngine.UI.Text homeTeamName;
@@ -26,7 +28,6 @@ public class SchedulePopupScript : MonoBehaviour, IScreen {
 		Util.SetButtonClickHandler(okButton, OKClickHandler);
 		Util.SetButtonClickHandler(closeButton, CloseClickHandler);
 		Util.SetButtonClickHandler(bgButton, CloseClickHandler);
-		SetSlider();
 	}
 
 	public void TransitionUpdate(GUIManager.GUIStateData data) {
@@ -38,9 +39,51 @@ public class SchedulePopupScript : MonoBehaviour, IScreen {
 	private void SetData(ScheduleItem scheduleItem) {
 		if(scheduleItem != null) {
 			_scheduleItem = scheduleItem;
+			SetSlider();
 			SetTeamLogos();
 			SetTeamNames();
 			SetTeamRecords();
+			SetTeamBGs();
+			SetTeamButtons();
+		}
+	}
+
+	private void SetTeamBGs() {
+		if(homeBG != null) {
+			homeBG.color = Color.green;
+		}
+		if(awayBG != null) {
+			awayBG.color = Color.grey;
+		}
+	}
+
+	private void SetTeamButtons() {
+		Util.SetButtonClickHandler(homeTeamButton,
+		() => {
+			SelectTeam(homeTeamButton.name);
+		});
+		Util.SetButtonClickHandler(awayTeamButton,
+		() => {
+			SelectTeam(awayTeamButton.name);
+		});
+	}
+
+	private void SelectTeam(string buttonName) {
+		if(buttonName.Equals("HomeTeam")) {
+			if(homeBG != null) {
+				homeBG.color = Color.green;
+			}
+			if(awayBG != null) {
+				awayBG.color = Color.grey;
+			}
+		}
+		else if(buttonName.Equals("AwayTeam")) {
+			if(homeBG != null) {
+				homeBG.color = Color.grey;
+			}
+			if(awayBG != null) {
+				awayBG.color = Color.green;
+			}
 		}
 	}
 
