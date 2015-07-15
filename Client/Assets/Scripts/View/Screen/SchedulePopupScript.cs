@@ -5,12 +5,28 @@ public class SchedulePopupScript : MonoBehaviour, IScreen {
 
 	public UnityEngine.UI.Button okButton;
 	public UnityEngine.UI.Button closeButton;
+	public UnityEngine.UI.Button bgButton;
+	public UnityEngine.UI.Image homeTeamLogo;
+	public UnityEngine.UI.Image awayTeamLogo;
+	public UnityEngine.UI.Button homeTeamButton;
+	public UnityEngine.UI.Button awayTeamButton;
+	public UnityEngine.UI.Text homeTeamName;
+	public UnityEngine.UI.Text awayTeamName;
+	public UnityEngine.UI.Text homeTeamRecord;
+	public UnityEngine.UI.Text awayTeamRecord;
+	public UnityEngine.UI.Text betAmountLabel;
+	public UnityEngine.UI.Slider betAmountSlider;
+	public UnityEngine.UI.Text dateLabel;
+
 
 	private ScheduleItem _scheduleItem;
+	private int _betAmount = 0;
 
 	private void Start() {
-		SetOKButton();
-		SetCloseButton();
+		Util.SetButtonClickHandler(okButton, OKClickHandler);
+		Util.SetButtonClickHandler(closeButton, CloseClickHandler);
+		Util.SetButtonClickHandler(bgButton, CloseClickHandler);
+		SetSlider();
 	}
 
 	public void TransitionUpdate(GUIManager.GUIStateData data) {
@@ -22,14 +38,42 @@ public class SchedulePopupScript : MonoBehaviour, IScreen {
 	private void SetData(ScheduleItem scheduleItem) {
 		if(scheduleItem != null) {
 			_scheduleItem = scheduleItem;
+			SetTeamLogos();
+			SetTeamNames();
+			SetTeamRecords();
 		}
 	}
 
-	private void SetOKButton() {
-		if(okButton != null) {
-			okButton.onClick.AddListener(() => {
-				OKClickHandler();
-			});
+	private void SetTeamLogos() {
+		string homeSpriteName = _scheduleItem.HomeTeam + ".png";
+		string awaySpriteName = _scheduleItem.AwayTeam + ".png";
+		Util.SetImage(homeTeamLogo, homeSpriteName);
+		Util.SetImage(awayTeamLogo, awaySpriteName);
+	}
+
+	private void SetTeamNames() {
+		Util.SetLabel(homeTeamName, _scheduleItem.HomeTeam);
+		Util.SetLabel(awayTeamName, _scheduleItem.AwayTeam);
+	}
+
+	private void SetTeamRecords() {
+		string homeRecordString = "4-5";
+		string awayRecordString = "6-3";
+		Util.SetLabel(homeTeamRecord, homeRecordString);
+		Util.SetLabel(awayTeamRecord, awayRecordString);
+	}
+
+	private void SetSlider() {
+		if(betAmountSlider != null) {
+			betAmountSlider.onValueChanged.AddListener(UpdateBetAmount);
+			betAmountSlider.value = betAmountSlider.minValue;
+		}
+	}
+
+	private void UpdateBetAmount(float amount) {
+		_betAmount = (int)amount;
+		if(betAmountLabel != null) {
+			betAmountLabel.text = "$" + _betAmount.ToString();
 		}
 	}
 
@@ -37,24 +81,13 @@ public class SchedulePopupScript : MonoBehaviour, IScreen {
 		Destroy(gameObject);
 	}
 
-	private void SetCloseButton() {
-		if(closeButton != null) {
-			closeButton.onClick.AddListener(() => {
-				CloseClickHandler();
-			});
-		}
-	}
-
 	private void CloseClickHandler() {
 		Destroy(gameObject);
 	}
 
 	private void OnDestroy() {
-		if(okButton != null) {
-			okButton.onClick.RemoveAllListeners();
-		}
-		if(closeButton != null) {
-			closeButton.onClick.RemoveAllListeners();
-		}
+		Util.RemoveButtonClickHandlers(okButton);
+		Util.RemoveButtonClickHandlers(closeButton);
+		Util.RemoveButtonClickHandlers(bgButton);
 	}
 }

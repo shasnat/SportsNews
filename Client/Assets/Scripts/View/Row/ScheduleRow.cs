@@ -71,11 +71,10 @@ public class ScheduleRow : BaseScrollScreen {
 	}
 
 	private void SetButton() {
-		if(button != null) {
-			button.onClick.AddListener(() => {
-				ClickHandler(button.name);
-			});
-		}
+		Util.SetButtonClickHandler(button,
+		() => {
+			ClickHandler(button.name);
+		});
 	}
 
 	private void ClickHandler(string name) {
@@ -83,8 +82,6 @@ public class ScheduleRow : BaseScrollScreen {
 	}
 
 	void OnDestroy() {
-		if(button != null) {
-			button.onClick.RemoveAllListeners();
-		}
+		Util.RemoveButtonClickHandlers(button);
 	}
 }
