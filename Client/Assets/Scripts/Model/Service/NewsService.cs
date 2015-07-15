@@ -19,10 +19,7 @@ public static class NewsService {
 		response["success"] = true;
 
 		Dictionary<string, object> firstNewsData = new Dictionary<string, object>();
-		firstNewsData[kText] = "0: ABCD EFG HIJK LMNOP QRST WXYZ\n" +
-			"1: ABCD EFG HIJK LMNOP QRST WXYZ\n" +
-			"2: ABCD EFG HIJK LMNOP QRST WXYZ\n" +
-			"3: ABCD EFG HIJK LMNOP QRST WXYZ\n";
+		firstNewsData[kText] = "We've reached mid-June and Michael Vick is still without a job. On Tuesday's edition of NFL Total Access, the veteran quarterback made his pitch to general managers.\n \"(I'm) a proven winner. I think that I've done a lot throughout the course of my career,\" he began.";
 		firstNewsData[kArticleName] = "Seahawks_Win_Superbowl.txt";
 		firstNewsData[kUrl] = "http://www.nfl.com/news/story/0ap3000000497443/article/michael-vick-sells-himself-to-nfl-general-managers";
 		firstNewsData[kPics] = "NFLImage1";

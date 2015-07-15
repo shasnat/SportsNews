@@ -22,7 +22,6 @@ public class HttpRequestManager : MonoBehaviour {
 	}
 
 	private void GetEditor(string uri = "http://www.contoso.com/default.html", Action<string> onSuccess=null, Action onFailure=null) {
-		Debug.LogError("SHAY http manager calling get");
 		// Create a request for the URL. 
 		WebRequest request = WebRequest.Create(uri);
 		// If required by the server, set the credentials.
@@ -59,11 +58,11 @@ public class HttpRequestManager : MonoBehaviour {
 		// check for errors
 		if (www.error == null)
 		{
-			Debug.LogError("SHAY WWW Ok!: " + www.text);
 			if(onSuccess != null) {
 				onSuccess(www.text);
 			}
-		} else {
+		}
+		else {
 			Debug.LogError("SHAY WWW Error: "+ www.error);
 			if(onFailure != null) {
 				onFailure();

@@ -36,7 +36,6 @@ public class NewsScreenScript : MonoBehaviour, IScreen {
 			text.text = "Retrieving...";
 			FileManager.GetFile(_newsItem.ArticleName, _newsItem.Url,
 			(content) => {
-				Debug.LogError("SHAY success callback " + content);
 				text.text = content;
 			},
 			() => {

@@ -27,7 +27,6 @@ public class UserManager : MonoBehaviour {
 	}
 
 	private void SignUp(string username, string password, string email, Dictionary<string, string> signUpParams) {
-		Debug.Log("Signing Up");
 		var user = new ParseUser()
 		{
 			Username = username,
@@ -56,7 +55,6 @@ public class UserManager : MonoBehaviour {
 	}
 
 	public void Login(string name, string password) {
-		Debug.Log("Calling Login");
 		ParseUser.LogInAsync(name, password).ContinueWith(
 		t => {
 			if(t.IsFaulted || t.IsCanceled) {
