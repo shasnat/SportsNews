@@ -10,7 +10,11 @@ public class MainScreenScript : MonoBehaviour, IScreen {
 	public void TransitionUpdate(GUIManager.GUIStateData data) {
 	}
 
-	void Start () {
+	void Start() {
+		OnGameDidLoad();
+	}
+
+	private void OnGameDidLoad() {
 		if(screens != null) {
 			UnityEngine.UI.ScrollRect scrollRect = gameObject.GetComponent<UnityEngine.UI.ScrollRect>();
 			ScrollRectSnap scrollSnap = gameObject.GetComponent<ScrollRectSnap>();

@@ -30,11 +30,13 @@ public class ScheduleRow : BaseScrollScreen {
 
 	private void SetTeamLogos() {
 		if(!string.IsNullOrEmpty(_scheduleItem.HomeTeam) && !string.IsNullOrEmpty(_scheduleItem.AwayTeam)) {
-			string spriteName = _scheduleItem.HomeTeam + ".png";
-			Util.SetImage(homeTeamLogo, spriteName);
+			string spriteName = _scheduleItem.HomeTeam + "Logo";
+			Sprite homeSprite = AssetManager.instance.GetSprite(spriteName);
+			Util.SetImage(homeTeamLogo, homeSprite);
 
-			spriteName = _scheduleItem.AwayTeam + ".png";
-			Util.SetImage(awayTeamLogo, spriteName);
+			spriteName = _scheduleItem.AwayTeam + "Logo";
+			Sprite awaySprite = AssetManager.instance.GetSprite(spriteName);
+			Util.SetImage(awayTeamLogo, awaySprite);
 		}
 	}
 

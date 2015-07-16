@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\Model\DataItem\DataItem.cs" />
      <Compile Include="Assets\Scripts\Model\DataItem\NewsItem.cs" />
      <Compile Include="Assets\Scripts\Model\DataItem\ScheduleItem.cs" />
+     <Compile Include="Assets\Scripts\Model\Manager\AssetManager.cs" />
      <Compile Include="Assets\Scripts\Model\Manager\FileManager.cs" />
      <Compile Include="Assets\Scripts\Model\Manager\GUIManager.cs" />
      <Compile Include="Assets\Scripts\Model\Manager\HttpRequestManager.cs" />

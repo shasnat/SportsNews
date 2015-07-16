@@ -1,19 +1,19 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/View/Screen/SchedulePopupScript.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Util.cs">
     <Files>
-      <File FileName="Assets/Scripts/Model/Manager/RequestManager.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Model/Manager/HttpRequestManager.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Model/Manager/GUIManager.cs" Line="114" Column="42" />
-      <File FileName="Assets/Scripts/View/Screen/SchedulePopupScript.cs" Line="6" Column="37" />
-      <File FileName="Assets/Scripts/View/Screen/ScheduleScreenScript.cs" Line="20" Column="30" />
-      <File FileName="Assets/Scripts/View/Row/ScheduleRow.cs" Line="12" Column="2" />
+      <File FileName="Assets/Scripts/View/Screen/SchedulePopupScript.cs" Line="92" Column="57" />
+      <File FileName="Assets/Scripts/View/Row/ScheduleRow.cs" Line="34" Column="13" />
+      <File FileName="Assets/Scripts/View/Screen/TrendingScreenScript.cs" Line="12" Column="31" />
+      <File FileName="Assets/Scripts/Model/Manager/NewsManager.cs" Line="24" Column="20" />
+      <File FileName="Assets/Scripts/Model/Service/NewsService.cs" Line="22" Column="194" />
+      <File FileName="Assets/Scripts/Util.cs" Line="36" Column="2" />
+      <File FileName="Assets/Scripts/Model/Manager/GUIManager.cs" Line="5" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/shasnat/Documents/Projects/Steve/SportsNews/Client/Assets/Scripts/View/Row/ScheduleRow.cs" line="82" />
-      <Breakpoint file="/Users/shasnat/Documents/Projects/Steve/SportsNews/Client/Assets/Scripts/View/Screen/SchedulePopupScript.cs" line="9" />
+      <Breakpoint file="/Users/shasnat/Documents/Projects/Steve/SportsNews/Client/Assets/Scripts/View/Row/ScheduleRow.cs" line="32" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

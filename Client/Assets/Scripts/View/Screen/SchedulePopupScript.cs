@@ -88,10 +88,12 @@ public class SchedulePopupScript : MonoBehaviour, IScreen {
 	}
 
 	private void SetTeamLogos() {
-		string homeSpriteName = _scheduleItem.HomeTeam + ".png";
-		string awaySpriteName = _scheduleItem.AwayTeam + ".png";
-		Util.SetImage(homeTeamLogo, homeSpriteName);
-		Util.SetImage(awayTeamLogo, awaySpriteName);
+		string homeSpriteName = _scheduleItem.HomeTeam + "Logo";
+		Sprite homeSprite = AssetManager.instance.GetSprite(homeSpriteName);
+		string awaySpriteName = _scheduleItem.AwayTeam + "Logo";
+		Sprite awaySprite = AssetManager.instance.GetSprite(awaySpriteName);
+		Util.SetImage(homeTeamLogo, homeSprite);
+		Util.SetImage(awayTeamLogo, awaySprite);
 	}
 
 	private void SetTeamNames() {

@@ -29,9 +29,9 @@ public static class Util {
 		}
 	}
 
-	public static void SetImage(UnityEngine.UI.Image image, string spriteName) {
-		if(image != null) {
-			image.sprite.name = spriteName;
+	public static void SetImage(UnityEngine.UI.Image image, Sprite sprite) {
+		if(image != null && sprite != null) {
+			image.sprite = sprite;
 		}
 	}
 

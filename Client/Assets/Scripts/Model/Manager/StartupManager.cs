@@ -4,6 +4,7 @@ using System.Collections;
 public class StartupManager : MonoBehaviour {
 	
 	void Awake() {
+		gameObject.AddComponent<AssetManager>();
 		gameObject.AddComponent<UserManager>();
 		gameObject.AddComponent<GUIManager>();
 		gameObject.AddComponent<HttpRequestManager>();
