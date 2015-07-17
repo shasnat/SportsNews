@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using System;
 using UnityEngine;
@@ -23,7 +23,7 @@ public static class Util {
 		return unixTimestamp;
 	}
 
-	public static void SetLabel(UnityEngine.UI.Text label, string text) {
+	public static void SetText(UnityEngine.UI.Text label, string text) {
 		if(label != null) {
 			label.text = text;
 		}

@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 
-public class NewsItem {
+public class NewsItem : DataItem {
 	private string _newsSnippet;
 	public string NewsSnippet {get{return _newsSnippet;} set{_newsSnippet = value;}}
 

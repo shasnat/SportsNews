@@ -1,19 +1,17 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Util.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/View/Screen/TrendingContentScreenScript.cs">
     <Files>
-      <File FileName="Assets/Scripts/View/Screen/SchedulePopupScript.cs" Line="92" Column="57" />
-      <File FileName="Assets/Scripts/View/Row/ScheduleRow.cs" Line="34" Column="13" />
-      <File FileName="Assets/Scripts/View/Screen/TrendingScreenScript.cs" Line="12" Column="31" />
-      <File FileName="Assets/Scripts/Model/Manager/NewsManager.cs" Line="24" Column="20" />
-      <File FileName="Assets/Scripts/Model/Service/NewsService.cs" Line="22" Column="194" />
-      <File FileName="Assets/Scripts/Util.cs" Line="36" Column="2" />
-      <File FileName="Assets/Scripts/Model/Manager/GUIManager.cs" Line="5" Column="1" />
+      <File FileName="Assets/Scripts/View/Row/NewsRow.cs" Line="18" Column="13" />
+      <File FileName="Assets/Scripts/View/Screen/BaseScrollScreen.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/View/Screen/TrendingContentScreenScript.cs" Line="11" Column="13" />
+      <File FileName="Assets/Scripts/Model/DataItem/TrendingContentItem.cs" Line="10" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/shasnat/Documents/Projects/Steve/SportsNews/Client/Assets/Scripts/View/Row/ScheduleRow.cs" line="32" />
+      <Breakpoint file="/Users/shasnat/Documents/Projects/Steve/SportsNews/Client/Assets/Scripts/Model/Manager/AssetManager.cs" line="29" />
+      <Breakpoint file="/Users/shasnat/Documents/Projects/Steve/SportsNews/Client/Assets/Scripts/View/Row/NewsRow.cs" line="52" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

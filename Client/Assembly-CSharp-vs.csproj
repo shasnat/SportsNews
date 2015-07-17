@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\Model\DataItem\DataItem.cs" />
      <Compile Include="Assets\Scripts\Model\DataItem\NewsItem.cs" />
      <Compile Include="Assets\Scripts\Model\DataItem\ScheduleItem.cs" />
+     <Compile Include="Assets\Scripts\Model\DataItem\TrendingContentItem.cs" />
      <Compile Include="Assets\Scripts\Model\Manager\AssetManager.cs" />
      <Compile Include="Assets\Scripts\Model\Manager\FileManager.cs" />
      <Compile Include="Assets\Scripts\Model\Manager\GUIManager.cs" />
@@ -65,6 +66,7 @@
      <Compile Include="Assets\Scripts\View\Helper\ScrollRectSnap.cs" />
      <Compile Include="Assets\Scripts\View\Row\NewsRow.cs" />
      <Compile Include="Assets\Scripts\View\Row\ScheduleRow.cs" />
+     <Compile Include="Assets\Scripts\View\Row\TrendingContentRow.cs" />
      <Compile Include="Assets\Scripts\View\Screen\BasePopupScript.cs" />
      <Compile Include="Assets\Scripts\View\Screen\BaseScrollScreen.cs" />
      <Compile Include="Assets\Scripts\View\Screen\IScreen.cs" />
@@ -72,6 +74,7 @@
      <Compile Include="Assets\Scripts\View\Screen\NewsScreenScript.cs" />
      <Compile Include="Assets\Scripts\View\Screen\SchedulePopupScript.cs" />
      <Compile Include="Assets\Scripts\View\Screen\ScheduleScreenScript.cs" />
+     <Compile Include="Assets\Scripts\View\Screen\TrendingContentScreenScript.cs" />
      <Compile Include="Assets\Scripts\View\Screen\TrendingScreenScript.cs" />
      <Compile Include="Assets\Scripts\View\Screen\WhatsNewScreenScript.cs" />
      <None Include="Assets\Parse.Unity.xml" />

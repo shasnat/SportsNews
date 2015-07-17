@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 
-public class ScheduleItem {
+public class ScheduleItem : DataItem {
 	private string _homeTeam;
 	public string HomeTeam {get{return _homeTeam;} set{_homeTeam = value;}}
 

@@ -26,7 +26,8 @@ public class GUIManager : MonoBehaviour {
 	public enum GUIDataType {
 		None,
 		NewsItem,
-		ScheduleItem
+		ScheduleItem,
+		TrendingContentItem
 	}
 
 	void Start() {
@@ -51,10 +52,15 @@ public class GUIManager : MonoBehaviour {
 	private void SetupTransitions() {
 		_transitions = new Dictionary<string, Dictionary<string, string>>();
 		_transitions["MainScreen"] = new Dictionary<string, string>();
-		_transitions["MainScreen"]["ArticleButton"] = "NewsScreen";
 
+		_transitions["MainScreen"]["ArticleButton"] = "NewsScreen";
 		_transitions["NewsScreen"] = new Dictionary<string, string>();
-		_transitions["NewsScreen"]["BackButton"] = "MainScreen";
+	//	_transitions["NewsScreen"]["BackButton"] = "MainScreen";
+
+		_transitions["MainScreen"]["TrendingButton"] = "TrendingContentScreen";
+		_transitions["TrendingContentScreen"] = new Dictionary<string, string>();
+	//	_transitions["TrendingContentScreen"]["BackButton"] = "MainScreen";
+		_transitions["TrendingContentScreen"]["ArticleButton"] = "NewsScreen";
 	}
 
 	public bool Transition(GUIState state) {
