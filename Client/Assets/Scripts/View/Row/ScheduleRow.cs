@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class ScheduleRow : BaseScrollScreen {
@@ -41,8 +41,8 @@ public class ScheduleRow : BaseScrollScreen {
 	}
 
 	private void SetTeamNameLabels() {
-		Util.SetLabel(homeTeamLabel, _scheduleItem.HomeTeam);
-		Util.SetLabel(awayTeamLabel, _scheduleItem.AwayTeam);
+		Util.SetText(homeTeamLabel, _scheduleItem.HomeTeam);
+		Util.SetText(awayTeamLabel, _scheduleItem.AwayTeam);
 	}
 
 	private void SetDateLabel() {

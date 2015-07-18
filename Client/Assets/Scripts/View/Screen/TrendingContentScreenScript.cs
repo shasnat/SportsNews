@@ -11,7 +11,15 @@ public class TrendingContentScreenScript : MonoBehaviour {
 	void Start() {
 		NewsManager.instance.GetTrendingContent("trending", SetData, Fail);
 	}
-	
+
+	public void Update() {
+		if (Application.platform == RuntimePlatform.Android) {
+			if(Input.GetKey(KeyCode.Escape)) {
+				GUIManager.instance.Transition(GUIManager.kBackTransition);
+			}
+		}
+	}
+
 	private void SetData(List<TrendingContentItem> contentItems) {
 		foreach(TrendingContentItem contentItem in contentItems) {
 			GameObject contentRowObject = Instantiate(trendingContentRowPrefab);

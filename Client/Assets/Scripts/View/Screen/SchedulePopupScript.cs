@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class SchedulePopupScript : MonoBehaviour, IScreen {
@@ -97,15 +97,15 @@ public class SchedulePopupScript : MonoBehaviour, IScreen {
 	}
 
 	private void SetTeamNames() {
-		Util.SetLabel(homeTeamName, _scheduleItem.HomeTeam);
-		Util.SetLabel(awayTeamName, _scheduleItem.AwayTeam);
+		Util.SetText(homeTeamName, _scheduleItem.HomeTeam);
+		Util.SetText(awayTeamName, _scheduleItem.AwayTeam);
 	}
 
 	private void SetTeamRecords() {
 		string homeRecordString = "4-5";
 		string awayRecordString = "6-3";
-		Util.SetLabel(homeTeamRecord, homeRecordString);
-		Util.SetLabel(awayTeamRecord, awayRecordString);
+		Util.SetText(homeTeamRecord, homeRecordString);
+		Util.SetText(awayTeamRecord, awayRecordString);
 	}
 
 	private void SetSlider() {

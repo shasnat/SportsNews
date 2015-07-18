@@ -35,6 +35,32 @@ public class NewsManager : MonoBehaviour {
 		}
 	}
 
+	public void GetTrendingContent(string trendingKey, Action<List<TrendingContentItem>> successCallback, Action failureCallback) {
+		List<TrendingContentItem> trendingList = new List<TrendingContentItem>();
+
+		Dictionary<string, object> data = new Dictionary<string, object>();
+
+		Dictionary<string, object> firstNewsData = new Dictionary<string, object>();
+		firstNewsData["text"] = "We've reached mid-June and Michael Vick is still without a job. On Tuesday's edition of NFL Total Access, the veteran quarterback made his pitch to general managers.\n \"(I'm) a proven winner. I think that I've done a lot throughout the course of my career,\" he began.";
+		firstNewsData["articleName"] = "Seahawks_Win_Superbowl.txt";
+		firstNewsData["url"] = "http://www.nfl.com/news/story/0ap3000000497443/article/michael-vick-sells-himself-to-nfl-general-managers";
+		firstNewsData["pics"] = "NFLImage1";
+
+		data["newsItem"] = firstNewsData;
+		data["message"] = "I just saw this and I can't believe it. #NFL #JustSawThis #CantBelieveIt";
+		data["user"] = "@Shasnat";
+		TrendingContentItem trendingItem = new TrendingContentItem(data);
+
+		trendingList.Add(trendingItem);
+		trendingList.Add(trendingItem);
+		trendingList.Add(trendingItem);
+		trendingList.Add(trendingItem);
+
+		if(successCallback != null) {
+			successCallback(trendingList);
+		}
+	}
+
 	private List<NewsItem> ParseNewsResponse(Dictionary<string, object> response) {
 		List<NewsItem> newsList = null;
 		if(response != null) {
